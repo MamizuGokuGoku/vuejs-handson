@@ -1,0 +1,15 @@
+.input-container{
+    display: grid;
+    grid-template-rows: 200px 50px;
+    grid-template-columns: 300px 300px;
+    grid-template-areas: "inputArea";
+    grid-gap: 10px;
+}
+.inputArea{
+    grid-area: inputArea;
+    display:grid;
+}
+.previewArea{
+    grid-area:inputArea;
+    display:grid;
+}
