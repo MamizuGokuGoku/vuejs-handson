@@ -1,0 +1,49 @@
+.input-container {
+  display: grid;
+  grid-template-rows: 200px 50px;
+  grid-template-columns: 300px 300px;
+  grid-template-areas:
+    "inputArea previewArea"
+    "buttonArea buttonArea";
+  grid-gap: 10px;
+}
+.inputArea {
+  grid-area: inputArea;
+  display: grid;
+}
+.previewArea {
+  grid-area: inputArea;
+  display: grid;
+}
+.buttonArea {
+  grid-area: buttonArea;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.filterArea {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-gap: 10px;
+}
+table {
+  margin-top: 10px;
+  width: 610px;
+  border-collapse: collapse;
+}
+th,
+td {
+  width: 50px;
+  padding-left: 5px;
+  word-break: break-all;
+}
+td input {
+  width: 95%;
+}
+.buttonWrapper {
+  width: 610px;
+  height: 50px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}

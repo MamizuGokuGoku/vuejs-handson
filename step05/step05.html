@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="step05.css" />
+    <title>User Registration</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="input-container">
+        <form class="inputArea">
+          <p>User Registration</p>
+          <label>Nick Name</label>
+          <input v-model="nickname" />
+          <label>E-Mail</label>
+          <input v-model="email" />
+        </form>
+      </div>
+      <div class="previewArea">
+        <p>Preview</p>
+        <label>NickName</label>
+        <input v-bind:value="nickname" readonly />
+        <label>E-Mail</label>
+        <input v-bind:value="email" readonly />
+      </div>
+      <div class="buttonArea">
+        <button @click="saveUser">Register</button>
+      </div>
+      <div class="filterArea">
+        <label>Filter the list by nickname</label>
+        <input v-model="nicknameFilter" />
+      </div>
+      <div class="userListArea">
+        <label>User List</label>
+        <table>
+          <thead>
+            <th>Nick Name</th>
+            <th>E-Mail</th>
+          </thead>
+          <tbody>
+            <tr
+              v-is="'user-row'"
+              v-for="(user, index) in filterdUsers"
+              :user="user"
+              :key="index"
+            ></tr>
+          </tbody>
+        </table>
+        <div class="buttonWrapper">
+          <button @click="displayUsers">Display Users</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0/dist/vue.global.js"></script>
+    <script src="user-row.js"></script>
+    <script src="step05.js"></script>
+  </body>
+</html>
